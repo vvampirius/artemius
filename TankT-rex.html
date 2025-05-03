@@ -1,0 +1,37 @@
+<html><body>
+<a href="t-rex.html">назад</a><br>
+ангар:<button type="button" id="knopka1">тяжёлый таик</button><button type="button" id="knopka2">быстрый танк</button><button type="button" id="knopka3">артелерия</button><br>
+<img style="display: none;" id="KB-1"src="https://wartools.ru/images/intro/sovet-11825_kv-1.jpg">
+<img style="display: none;" id="T-34" src="https://static.wikia.nocookie.net/warrior/images/a/aa/%D0%91%D0%A2-5_%281%29.jpg/revision/latest?cb=20190421071613&path-prefix=ru">
+<img style="display: none;" id="KB-2" src="https://static.encyclopedia.warthunder.com/images/ussr_kv_2_1939.png">
+<button type="button">запустить</button>
+
+<script>
+    const KB1 = document.getElementById('KB-1')
+    const knopka1 = document.getElementById('knopka1')
+    const T34 = document.getElementById('T-34')
+    const knopka2 = document.getElementById('knopka2')
+    const KB2 = document.getElementById('KB-2')
+    const knopka3 = document.getElementById('knopka3')
+    const knopka4 = document.getElementById('knopka4')
+
+    knopka1.onclick = function(){
+        KB1.style.removeProperty("display")
+        T34.style.display="none"
+        KB2.style.display="none"
+    }
+    knopka2.onclick = function(){
+        T34.style.removeProperty("display")
+        KB1.style.display="none"
+        KB2.style.display="none"
+    }
+    knopka3.onclick = function(){
+        KB2.style.removeProperty("display")
+        T34.style.display="none"
+        KB1.style.display="none"
+    }
+    knopka4.onclick = function(){
+        if ()
+    }
+</script>
+</body></html>
