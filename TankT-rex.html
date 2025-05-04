@@ -1,10 +1,13 @@
 <html><body>
 <a href="t-rex.html">назад</a><br>
-ангар:<button type="button" id="knopka1">тяжёлый таик</button><button type="button" id="knopka2">быстрый танк</button><button type="button" id="knopka3">артелерия</button><br>
-<img style="display: none;" id="KB-1"src="https://wartools.ru/images/intro/sovet-11825_kv-1.jpg">
-<img style="display: none;" id="T-34" src="https://static.wikia.nocookie.net/warrior/images/a/aa/%D0%91%D0%A2-5_%281%29.jpg/revision/latest?cb=20190421071613&path-prefix=ru">
-<img style="display: none;" id="KB-2" src="https://static.encyclopedia.warthunder.com/images/ussr_kv_2_1939.png">
-<button type="button">запустить</button>
+<div id="angar">ангар:</div><button type="button" id="knopka1">тяжёлый танк</button><button type="button" id="knopka2">быстрый танк</button><button type="button" id="knopka3">артелерия</button><br>
+<img style="display: none; position: absolute; left: 10em; transition: all 5s linear;" id="KB-1"src="https://wartools.ru/images/intro/sovet-11825_kv-1.jpg">
+<img style="display: none; position: absolute; left: 10em; transition: all 1s linear;" id="T-34" src="https://static.wikia.nocookie.net/warrior/images/a/aa/%D0%91%D0%A2-5_%281%29.jpg/revision/latest?cb=20190421071613&path-prefix=ru">
+<img id="KB-2" src="https://static.encyclopedia.warthunder.com/images/ussr_kv_2_1939.png" style="display: none;position: absolute; left: 10em; transition: all 3s linear;">
+<button type="button" id="knopka4">запустить</button>
+<div id="text1" style="display: none;">тяжёлый танк запущен!</div>
+<div id="text2" style="display: none;">быстрый танк запущен!</div>
+<div id="text3" style="display: none;">артелерия запущена!</div>
 
 <script>
     const KB1 = document.getElementById('KB-1')
@@ -14,6 +17,12 @@
     const KB2 = document.getElementById('KB-2')
     const knopka3 = document.getElementById('knopka3')
     const knopka4 = document.getElementById('knopka4')
+    const text = document.getElementById('text1')
+    const text2 = document.getElementById('text2')
+    const text3 = document.getElementById('text3')
+    const angar = document.getElementById('angar')
+    const urlParams = new URLSearchParams(window.location.search);
+    const dinozavr = urlParams.get('dinozavr');
 
     knopka1.onclick = function(){
         KB1.style.removeProperty("display")
@@ -31,7 +40,45 @@
         KB1.style.display="none"
     }
     knopka4.onclick = function(){
-        if ()
+        if (KB2.style.getPropertyValue("display") !== "none") {
+            KB1.style.display="none"
+            knopka1.style.display="none"
+            T34.style.display="none"
+            knopka2.style.display="none"
+            KB2.style.left="50em"
+            knopka3.style.display="none"
+            knopka4.style.display="none"
+            angar.style.display="none"
+            text3.style.removeProperty("display")
+        }
+        if (T34.style.getPropertyValue("display") !== "none") {
+            KB1.style.display="none"
+            knopka1.style.display="none"
+            T34.style.left="30em"
+            knopka2.style.display="none"
+            KB2.style.display="none"
+            knopka3.style.display="none"
+            knopka4.style.display="none"
+            angar.style.display="none"
+            text2.style.removeProperty("display")
+        }
+        if (KB1.style.getPropertyValue("display") !== "none") {
+            KB1.style.left="50em"
+            knopka1.style.display="none"
+            T34.style.display="none"
+            knopka2.style.display="none"
+            KB2.style.display="none"
+            knopka3.style.display="none"
+            knopka4.style.display="none"
+            angar.style.display="none"
+            text.style.removeProperty("display")
+        }
+        if (KB1.style.getPropertyValue("display") == "none" && T34.style.getPropertyValue("display") == "none" && KB2.style.getPropertyValue("display") == "none") {
+            alert('не выбран танк')
+        }
+        if (dinozavr !=="horoshiy") {
+            alert('у танка нет оружия оружие на сайте t-rex.html')
+        }
     }
 </script>
 </body></html>

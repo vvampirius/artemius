@@ -1,11 +1,13 @@
 <html><body>
+    <p lang="fr">Ce paragraphe est défini en français.</p>
     <p><img id="t-rex1" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">простой динозавр
     <input id="ekran1" type="text" style="display: inline;">
     <input type="submit" style="display: inline;">
     <p><img id="t-rex2" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">простой динозавр
     <input id="ekran2" type="text" style="display: inline;">
     <input type="submit" style="display: inline;">
-    <p><img id="t-rex3" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">повар
+    <p><img id="t-rex3" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">повар<br>
+    меню:
     <div>
         <input type="radio" id="food1" name="food" value="huey" checked />
         <label for="food1">спагетти-рекс</label>
@@ -30,7 +32,7 @@
         <input type="radio" id="no drinks" name="drinks" value="huey" checked />
         <label for="no drinks">ничего</label>
     </div>
-    <button type="button" id="text3">отправить</button></p>
+    <button type="button" id="text3">заказать</button></p>
     <p><img id="t-rex4" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">строитель-производиттель
     <input id="ekran4" type="text" style="display: inline;">
     <input type="submit" style="display: inline;">
@@ -43,13 +45,63 @@
     <input id="ekran7" type="text" style="display: inline;">
     <input type="submit" style="display: inline;">
     <p><img id="t-rex8" src="https://dinohistory.ru/wp-content/uploads/2018/01/q40.jpg">оруженосец
-    <button type="button">масляная</button>
-    <button type="button">гранатомёт</button>
-    <button type="button">супер-бластер</button>
-    <button type="button">пулемёт</button>
-    <button type="button">GBU</button>
-    <button type="button">лук(со стрелами)</button>
-    <button type="button">лук(с присоской)</button>
-    <button type="button">гарпун</button>
-    </p><button type="button">ядерная бомба</button>
+    <button id="knopka1" type="button">масляная</button>
+    <button id="knopka2" type="button">гранатомёт</button>
+    <button id="knopka3" type="button">супер-бластер</button>
+    <button id="knopka4" type="button">пулемёт</button>
+    <button id="knopka5" type="button">GBU</button>
+    <button id="knopka6" type="button">лук(со стрелами)</button>
+    <button id="knopka7" type="button">лук(с присоской)</button>
+    <button id="knopka8" type="button">гарпун</button>
+    <button id="knopka9" type="button">ядерная бомба</button></p>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('dinozavr');
+        const knopka1 = document.getElementById('knopka1')
+        const knopka2 = document.getElementById('knopka2')
+        const knopka3 = document.getElementById('knopka3')
+        const knopka4 = document.getElementById('knopka4')
+        const knopka5 = document.getElementById('knopka5')
+        const knopka6 = document.getElementById('knopka6')
+        const knopka7 = document.getElementById('knopka7')
+        const knopka8 = document.getElementById('knopka8')
+        const knopka9 = document.getElementById('knopka9')
+
+        knopka1.onclick = function() {
+            alert('масляная запущена')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka2.onclick = function() {
+            alert('гранатомёт выстрелил')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka3.onclick = function() {
+            alert('супер-бластер выстрелил')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka4.onclick = function() {
+            alert('пулемёт стреляет')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka5.onclick = function() {
+            alert('GBU запущена')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka6.onclick = function() {
+            alert('лук (со стрелами) выстрелил')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka7.onclick = function() {
+            alert('лук (с присоскай) присосался')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka8.onclick = function() {
+            alert('гарпун притянул')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+        knopka9.onclick = function() {
+            alert('(☢) бомба запущена')
+            window.location = 'TankT-rex.html?dinozavr=horoshiy'
+        }
+    </script>
 </body></html>
