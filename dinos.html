@@ -1,0 +1,43 @@
+<html><body>
+    <div id="dino" style="position: fixed;top: 20em;left: 10;transition: 2s;rotatey(180deg)">🦖</div>
+    <div id="monstr2" style="position: fixed; top: 20em;left: 45em;transition: 3s;">👾</div>
+    <div style="position: fixed; top: 21em;left: 0em;">__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</div>
+    <div id="ps1" style="position: fixed;top: 22em;left: 0em;">❤️</div>
+    <div id="fire" style="position: fixed;top: 25em;left: 0em;transition: 3s;">🔥</div>
+    <div id="dragon" style="position: fixed;top: 25em;left: 0em;transition: 3s;">🐲</div>
+    <div id="vasilisk" style="position: fixed;top: 25em;left: 50em;">🐉</div>
+    <div style="position: fixed; top: 51em;left: 0em;">__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</div>
+    <a href="dino2.html">→🎮</a>
+
+    <script>
+        const dino = document.getElementById('dino')
+        const monstr2 = document.getElementById('monstr2')
+        const ps1 = document.getElementById('ps1')
+        const dragon = document.getElementById('dragon')
+        const fire = document.getElementById('fire')
+        const vasilisk = document.getElementById('vasilisk')
+
+        window.addEventListener("keydown", (ev) => {
+            if(ev.key === 's') dino.style.top = parseInt(dino.style.top) - 5
+            if(ev.key === 'a') dino.style.left = parseInt(dino.style.left) - 5
+            if(ev.key === 'd') dino.style.left = parseInt(dino.style.left) + 5
+            if(ev.key === 'w') monstr2.style.left = parseInt(monstr2.style.left) + 5
+            if(ev.key === 'q') monstr2.style.left = parseInt(monstr2.style.left) - 5
+            if(ev.key === 'z') dragon.style.left = parseInt(dragon.style.left) - 5
+            if(ev.key === 'x') dragon.style.left = parseInt(dragon.style.left) + 5
+            if(ev.key === 'z') fire.style.left = parseInt(fire.style.left) - 5
+            if(ev.key === 'x') fire.style.left = parseInt(fire.style.left) + 5
+            if(ev.key === 'f') fire.style.left = parseInt(fire.style.left) +50
+            if(ev.key === 's' && dino.style.top == "10px"){
+                dino.style.top = "20em"
+            }
+            if(ev.key === 'k'){
+                dragon.style.left = "0em"
+                ps1.style.display="none"
+                alert('GAME_OVER')
+                dragon.style.display="none"
+                fire.style.display="none"
+            }
+        });
+    </script>
+</body></html>

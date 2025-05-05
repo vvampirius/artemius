@@ -1,0 +1,34 @@
+<html><body>
+    <div id="laser" style="position: fixed;top: 5em;left: 0em;transition: 1s;">☄️</div>
+    <div id="roket" style="position: fixed;top: 5em;left: 0em;transition: 2s;">🚀</div>
+    <div id="monstr1" style="position: fixed;top: 1em;left: 10em;transition: 990ms;">👾</div>
+    <div id="monstr2" style="position: fixed;top: 2em;left: 10em;transition: 990ms;">👾</div>
+    <div id="monstr3" style="position: fixed;top: 3em;left: 10em;transition: 990ms;">👾</div>
+    <div id="monstr4" style="position: fixed;top: 4em;left: 10em;transition: 990ms;">👾</div>
+    <div id="monstr5" style="position: fixed;top: 5em;left: 10em;transition: 990ms;">👾</div>
+    <div id="SuperMonstr" style="position: fixed;top: 5em;left: 10em;transition: 990ms;">👽</div>
+    <div></div>
+
+    <script>
+        const laser = document.getElementById('laser')
+        const laser2 = document.getElementById('laser')
+        const roket = document.getElementById('roket')
+        const monstr1 = document.getAnimations('monstr1')
+        const monstr2 = document.getAnimations('monstr2')
+        const monstr3 = document.getAnimations('monstr3')
+        const monstr4 = document.getAnimations('monstr4')
+        const monstr5 = document.getAnimations('monstr5')
+        const SuperMonstr = document.getElementById('SuperMonstr')
+
+        window.addEventListener("keydown", (ev) => {
+            if(ev.key === 's') roket.style.top = parseInt(roket.style.top) - 5
+            if(ev.key === 's') laser.style.top = parseInt(laser.style.top) - 5
+            if(ev.key === 'd') roket.style.top = parseInt(roket.style.top) + 5
+            if(ev.key === 'd') laser.style.top = parseInt(laser.style.top) + 5
+            if(ev.key === 'f') roket.style.left = parseInt(roket.style.left) - 5
+            if(ev.key === 'f') laser.style.left = parseInt(laser.style.left) - 5
+            if(ev.key === 'g') roket.style.left = parseInt(roket.style.left) + 5
+            if(ev.key === 'g') laser.style.left = parseInt(laser.style.left) + 5
+        });
+    </script>
+</body></html>
