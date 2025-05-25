@@ -1,0 +1,72 @@
+<html><body>
+    <div id="planeta1" style="position: absolute;top: 0;left: 0;">🌍</div>
+    <div id="zemlyanin" style="position: absolute;top: 0;left: 0;">🧑‍🚀</div>
+    <div id="planeta2" style="position: absolute;top: 0;left: 100;">🪐</div>
+    <div id="monstr1" style="position: absolute;top: 0;left: 100;">👾</div>
+    <div id="planeta3" style="position: absolute;top: 0;left: 200;">🪐</div>
+    <div id="monstr2" style="position: absolute;top: 0;left: 200;">🦎</div>
+    <div id="planeta4" style="position: absolute;top: 0;left: 300;">🪐</div>
+    <div id="monstr3" style="position: absolute;top: 0;left: 300;">🪱</div>
+    <a href="UFOinfo.html" style="position: absolute;top: 0;left: 400;">🛸</a>
+    <div id="UFO" style="position: absolute;top: 100;left: 0; transition: 3s;">🚀</div>
+    <div id="GameOver" style="position: absolute;top: 100;left: 150;display: none;">GAME_OVER</div>
+
+    <script>
+        function isIntersecting(el1, el2) {
+            const rect1 = el1.getBoundingClientRect();
+            const rect2 = el2.getBoundingClientRect();
+            return !(
+                rect1.right < rect2.left ||  // Левая граница rect2 правее правой границы rect1
+                rect1.left > rect2.right ||  // Правая граница rect2 левее левой границы rect1
+                rect1.bottom < rect2.top ||  // Верхняя граница rect2 ниже нижней границы rect1
+                rect1.top > rect2.bottom     // Нижняя граница rect2 выше верхней границы rect1
+            );
+        }
+
+        const roket = document.getElementById('UFO')
+        const monstr1 = document.getElementById('monstr1')
+        const monstr2 = document.getElementById('monstr2')
+        const monstr3 = document.getElementById('monstr3')
+        const zemlyanin = document.getElementById('zemlyanin')
+        const GameOver = document.getElementById('GameOver')
+
+        function r() {
+            if (isIntersecting(monstr3, roket)){
+                alert('уничтожение радиацией произошло')
+                alert('GAME_OVER ☢️🔥')
+                roket.style.display="none"
+                GameOver.style.removeProperty("display")
+            }
+        }
+        function d1() {
+            if (isIntersecting(monstr1, roket)){
+                alert('👾')
+            }
+        }
+        function d2() {
+            if (isIntersecting(monstr2, roket)){
+                alert('🦎🌌')
+            }
+        }
+        function d3() {
+            if (isIntersecting(monstr3, roket)){
+                alert('☢️🪱')
+                alert('уничтожение радиацией через 3 секунд')
+                setTimeout(r, 3000)
+            }
+        }
+
+        window.addEventListener("keydown", (ev) => {
+            console.log("test")
+            if(ev.key === 'q') roket.style.left = parseInt(roket.style.left) - 100
+            if(ev.key === 'w') roket.style.left = parseInt(roket.style.left) + 100
+            if(ev.key === 'z') {
+                roket.style.top = parseInt(roket.style.top) - 100
+                setTimeout(d1, 3000)
+                setTimeout(d2, 3000)
+                setTimeout(d3, 3000)
+            }
+            if(ev.key === 'x') roket.style.top = parseInt(roket.style.top) + 100
+        });
+    </script>
+</body></html>

@@ -1,0 +1,73 @@
+<html><body>
+    <div id="vhod" style="position: absolute;top: 25;left: 0;">⛩</div>
+    <div id="feniks" style="position: absolute;top: 25;left: 25;transition: 10s;">🐦‍🔥</div>
+    <div id="mag" style="position: absolute;top: 0;left: 0;">🧙‍♂️</div>
+    <div id="troll" style="position: absolute;top: 50;left: 0;">🧌</div>
+    <div id="djin" style="position: absolute;top: 0;left: 75;display: none;">🧞‍♂️</div>
+    <div id="rusalka" style="position: absolute;top: 25;left: 50;">🧜‍♂️</div>
+    <div id="lampa" style="position: absolute;top: 25;left: 75;">🫖</div>
+    <div id="fire" style="position: absolute;top: 0;left: 25;transition: 1s;display: none;transition: 1s;">🔥</div>
+    <div id="dragon" style="position: absolute;top: 0;left: 25;transition: 1s;">🐲</div>
+    <div id="shot" style="position: absolute;top: 0;left: 0;display: none;">🪄</div>
+
+    <script>
+        function isIntersecting(el1, el2) {
+            const rect1 = el1.getBoundingClientRect();
+            const rect2 = el2.getBoundingClientRect();
+            return !(
+                rect1.right < rect2.left ||  // Левая граница rect2 правее правой границы rect1
+                rect1.left > rect2.right ||  // Правая граница rect2 левее левой границы rect1
+                rect1.bottom < rect2.top ||  // Верхняя граница rect2 ниже нижней границы rect1
+                rect1.top > rect2.bottom     // Нижняя граница rect2 выше верхней границы rect1
+            );
+        }
+
+        const djin = document.getElementById('djin')
+        const dragon = document.getElementById('dragon')
+        const fire = document.getElementById('fire')
+        const feniks = document.getElementById('feniks')
+
+        function fe() {
+            feniks.style.left = parseInt(feniks.style.left) + 200
+        }
+        function fi2() {
+            feniks.style.removeProperty("display")
+        }
+        function fi() {
+            if(isIntersecting(fire, feniks)) {
+                feniks.style.display="none"
+                feniks.style.left = parseInt(feniks.style.left) - 200
+                setTimeout(fi2, 1000)
+            }
+        }
+        window.addEventListener("keydown", (ev) => {
+            console.log("test")
+            if(ev.key === 'a') dragon.style.left = parseInt(dragon.style.left) - 25
+            if(ev.key === 'a') fire.style.left = parseInt(fire.style.left) - 25
+            if(ev.key === 'd') dragon.style.left = parseInt(dragon.style.left) + 25
+            if(ev.key === 'd') fire.style.left = parseInt(fire.style.left) + 25
+            if(ev.key === 'w') dragon.style.top = parseInt(dragon.style.top) - 25
+            if(ev.key === 'w') fire.style.top = parseInt(fire.style.top) - 25
+            if(ev.key === 's') dragon.style.top = parseInt(dragon.style.top) + 25
+            if(ev.key === 's') fire.style.top = parseInt(fire.style.top) + 25
+            //if(ev.key === '') {
+            //    .style.top = parseInt(.style.top) - 100
+            //    setTimeout(, 3000)}
+            if(ev.key === 'j') {
+                djin.style.removeProperty("display")
+                djin.style.top = djin.style.top - 25
+            }
+            if(ev.key === 'k') {
+                djin.style.display="none"
+            }
+            if(ev.key === 'f') {
+                fire.style.removeProperty("display")
+                fire.style.left = parseInt(fire.style.left) + 25
+                setTimeout(fi, 1000)
+            }
+            if(ev.key === 'q') {
+                setTimeout(fe, 1000)
+            }
+        });
+    </script>
+</body></html>

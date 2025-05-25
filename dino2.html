@@ -1,34 +1,138 @@
 <html><body>
-    <div id="laser" style="position: fixed;top: 5em;left: 0em;transition: 1s;">☄️</div>
-    <div id="roket" style="position: fixed;top: 5em;left: 0em;transition: 2s;">🚀</div>
-    <div id="monstr1" style="position: fixed;top: 1em;left: 10em;transition: 990ms;">👾</div>
-    <div id="monstr2" style="position: fixed;top: 2em;left: 10em;transition: 990ms;">👾</div>
-    <div id="monstr3" style="position: fixed;top: 3em;left: 10em;transition: 990ms;">👾</div>
-    <div id="monstr4" style="position: fixed;top: 4em;left: 10em;transition: 990ms;">👾</div>
-    <div id="monstr5" style="position: fixed;top: 5em;left: 10em;transition: 990ms;">👾</div>
-    <div id="SuperMonstr" style="position: fixed;top: 5em;left: 10em;transition: 990ms;">👽</div>
-    <div></div>
+    <a href="UFO.html">🛸</a>
+    <div id="laser" style="position: fixed;top: 700;left: 100;transition: 1s;">☄️</div>
+    <div id="roket" style="position: fixed;top: 700;left: 100;transition: 1s;">🛰️</div>
+    <div id="monstr1" style="position: fixed;top: 0;left: 100;transition: 2s;">👾</div>
+    <div id="monstr2" style="position: fixed;top: 0;left: 200;transition: 2s;">👾</div>
+    <div id="monstr3" style="position: fixed;top: 0;left: 300;transition: 2s;">👾</div>
+    <div id="monstr4" style="position: fixed;top: 0;left: 400;transition: 2s;">👾</div>
+    <div id="monstr5" style="position: fixed;top: 0;left: 500;transition: 2s;">👾</div>
+    <div id="monstr6" style="position: fixed;top: 0;left: 600;transition: 2s;">👾</div>
+    <div id="monstr7" style="position: fixed;top: 0;left: 700;transition: 2s;">👾</div>
+    <div id="monstr8" style="position: fixed;top: 0;left: 800;transition: 2s">👾</div>
+    <div id="monstr9" style="position: fixed;top: 0;left: 900;transition: 2s;">👾</div>
+    <div id="monstr10" style="position: fixed;top: 0;left: 1000;transition: 2s;">👾</div>
+    <div id="wampire" style="position: fixed;top: 0;left: 900;display: none;">🦇</div>
+    <div id="r"></div>
 
     <script>
-        const laser = document.getElementById('laser')
-        const laser2 = document.getElementById('laser')
-        const roket = document.getElementById('roket')
-        const monstr1 = document.getAnimations('monstr1')
-        const monstr2 = document.getAnimations('monstr2')
-        const monstr3 = document.getAnimations('monstr3')
-        const monstr4 = document.getAnimations('monstr4')
-        const monstr5 = document.getAnimations('monstr5')
-        const SuperMonstr = document.getElementById('SuperMonstr')
+        function isIntersecting(el1, el2) {
+            const rect1 = el1.getBoundingClientRect();
+            const rect2 = el2.getBoundingClientRect();
+            return !(
+                rect1.right < rect2.left ||  // Левая граница rect2 правее правой границы rect1
+                rect1.left > rect2.right ||  // Правая граница rect2 левее левой границы rect1
+                rect1.bottom < rect2.top ||  // Верхняя граница rect2 ниже нижней границы rect1
+                rect1.top > rect2.bottom     // Нижняя граница rect2 выше верхней границы rect1
+            );
+        }
 
+        const laser = document.getElementById('laser')
+        const roket = document.getElementById('roket')
+        const monstr1 = document.getElementById('monstr1')
+        const monstr2 = document.getElementById('monstr2')
+        const monstr3 = document.getElementById('monstr3')
+        const monstr4 = document.getElementById('monstr4')
+        const monstr5 = document.getElementById('monstr5')
+        const monstr6 = document.getElementById('monstr6')
+        const monstr7 = document.getElementById('monstr7')
+        const monstr8 = document.getElementById('monstr8')
+        const monstr9 = document.getElementById('monstr9')
+        const monstr10 = document.getElementById('monstr10')
+        const wampire = document.getElementById('wampire')
+        const monstrs = [monstr1, monstr2, monstr3, monstr4, monstr5, monstr6, monstr6, monstr7, monstr8, monstr9, monstr10]
+        const r = document.getElementById('r')
+        let random = 10
+
+        function d2() {
+            for (const monstr of monstrs){
+                if (isIntersecting(monstr, laser)){
+                    monstr.style.display="none"
+                }
+            }
+        }
         window.addEventListener("keydown", (ev) => {
             if(ev.key === 's') roket.style.top = parseInt(roket.style.top) - 5
             if(ev.key === 's') laser.style.top = parseInt(laser.style.top) - 5
             if(ev.key === 'd') roket.style.top = parseInt(roket.style.top) + 5
             if(ev.key === 'd') laser.style.top = parseInt(laser.style.top) + 5
-            if(ev.key === 'f') roket.style.left = parseInt(roket.style.left) - 5
-            if(ev.key === 'f') laser.style.left = parseInt(laser.style.left) - 5
-            if(ev.key === 'g') roket.style.left = parseInt(roket.style.left) + 5
-            if(ev.key === 'g') laser.style.left = parseInt(laser.style.left) + 5
+            if(ev.key === 'f') roket.style.left = parseInt(roket.style.left) - 100
+            if(ev.key === 'f') laser.style.left = parseInt(laser.style.left) - 100
+            if(ev.key === 'g') roket.style.left = parseInt(roket.style.left) + 100
+            if(ev.key === 'g') laser.style.left = parseInt(laser.style.left) + 100
+            if(ev.key === 'w') monstr1.style.top = parseInt(monstr1.style.top) -700
+            if(ev.key === 'w') monstr2.style.top = parseInt(monstr2.style.top) -700
+            if(ev.key === 'w') monstr3.style.top = parseInt(monstr3.style.top) -700
+            if(ev.key === 'w') monstr4.style.top = parseInt(monstr4.style.top) -700
+            if(ev.key === 'w') monstr5.style.top = parseInt(monstr5.style.top) -700
+            if(ev.key === 'w') monstr6.style.top = parseInt(monstr6.style.top) -700
+            if(ev.key === 'w') monstr7.style.top = parseInt(monstr7.style.top) -700
+            if(ev.key === 'w') monstr8.style.top = parseInt(monstr8.style.top) -700
+            if(ev.key === 'w') monstr9.style.top = parseInt(monstr9.style.top) -700
+            if(ev.key === 'w') monstr10.style.top = parseInt(monstr10.style.top) -700
+            if(ev.key === 'w') {
+                wampire.style.removeProperty("display")
+            }
+            if(ev.key === 'x') {
+             laser.style.top = parseInt(laser.style.top) - 700
+             setTimeout(d2, 1000)
+            }
+            if(ev.key === 'z') laser.style.top = parseInt(laser.style.top) + 700
         });
+        function d() {
+            for (const monstr of monstrs){
+                if (isIntersecting(monstr, roket)){
+                    roket.style.display="none"
+                    alert('GAME_OVER')
+                }
+            }
+        }
+        function x() {
+            r.textContent = random.toString()
+            if(random === 10) {
+                monstr10.style.top = 700
+                monstr10.style.left = 100
+            }
+            if(random === 9) {
+                monstr9.style.top = 700
+                monstr9.style.left = 100
+            }
+            if(random === 8) {
+                monstr8.style.top = 700
+                monstr8.style.left = 100
+            }
+            if(random === 7) {
+                monstr7.style.top = 700
+                monstr7.style.left = 100
+            }
+            if(random === 6) {
+                monstr6.style.top = 700
+                monstr6.style.left = 100
+            }
+            if(random === 5) {
+                console.log(monstr5)
+                monstr5.style.top = 700
+                monstr5.style.left = 100
+            }
+            if(random === 4) {
+                monstr4.style.top = 700
+                monstr4.style.left = 100
+            }
+            if(random === 3) {
+                monstr3.style.top = 700
+                monstr3.style.left = 100
+            }
+            if(random === 2) {
+                monstr2.style.top = 700
+                monstr2.style.left = 100
+            }
+            if(random === 1) {
+                monstr1.style.top = 700
+                monstr1.style.left = 100
+            }
+            random = random - 1
+            setTimeout(d, 2000)
+        }
+        setInterval(x, 5000)
     </script>
 </body></html>

@@ -2,12 +2,25 @@
     <div id="dino" style="position: fixed;top: 20em;left: 10;transition: 2s;rotatey(180deg)">🦖</div>
     <div id="monstr2" style="position: fixed; top: 20em;left: 45em;transition: 3s;">👾</div>
     <div style="position: fixed; top: 21em;left: 0em;">__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</div>
-    <div id="ps1" style="position: fixed;top: 22em;left: 0em;">❤️</div>
+    <div style="position: fixed;top: 22em;left: 0em;">❤️</div>
+    <div id="ps1" style="position: fixed;top: 22em;left: 0em;display: none;">💘</div>
     <div id="fire" style="position: fixed;top: 25em;left: 0em;transition: 3s;">🔥</div>
     <div id="dragon" style="position: fixed;top: 25em;left: 0em;transition: 3s;">🐲</div>
     <div id="vasilisk" style="position: fixed;top: 25em;left: 50em;">🐉</div>
     <div style="position: fixed; top: 51em;left: 0em;">__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</div>
-    <a href="dino2.html">→🎮</a>
+    <a href="dino2.html">→🎮</a><br>
+    <div>клавиши динозавра:
+        на право - d
+        на лево - a
+        прыжок/опустится - s <br>
+        клавиши монстра:
+        на лево - q
+        на право - w <br>
+        клавиши дракона:
+        на право - x
+        на лево - z
+        стрельба - f
+        самоликвидация - k</div>
 
     <script>
         const dino = document.getElementById('dino')
@@ -33,7 +46,7 @@
             }
             if(ev.key === 'k'){
                 dragon.style.left = "0em"
-                ps1.style.display="none"
+                ps1.style.removeProperty("display")
                 alert('GAME_OVER')
                 dragon.style.display="none"
                 fire.style.display="none"

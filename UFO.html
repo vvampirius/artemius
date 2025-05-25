@@ -1,0 +1,191 @@
+<html><body>
+    <p>скорость:
+    <button type="button" id="speed">-</button>
+    <button type="button" id="speed2">+</button>
+    <button id="knopka3" type="button">посмотреть</button>
+    <div id="r"></div>
+    <select id="select">
+        <option value="UFO.html">телепорт</option>
+        <option value="t-rex.html">телепорт: t-rex.html</option>
+        <option value="pa.html">телепорт: pa.html</option>
+        <option value="dino2.html">телепорт: dino2.html</option>
+    </select>
+    <p>оружие:
+    <div>
+        <input type="radio" id="gun" name="wepons" value="huey" />
+        <label for="gun">gun</label>
+    </div>
+    <div>
+        <input type="radio" id="GBU" name="wepons" value="huey" />
+        <label for="GBU">radio control rocket</label>
+    </div>
+    <div>
+        <input type="radio" id="fire" name="wepons" value="huey" />
+        <label for="fire">fire</label>
+    </div>
+    <div>
+        <input type="radio" id="mishon" name="wepons" value="huey" />
+        <label for="mishon">roket</label>
+    </div>
+    <div>
+        <input type="radio" id="ghostbomb" name="wepons" value="huey" />
+        <label for="ghostbomb">ghostbomb</label>
+    </div>
+    <div>
+        <input type="radio" id="laser" name="wepons" value="huey" />
+        <label for="laser">laser</label>
+    </div>
+    <div>
+        <input type="radio" id="minikomet" name="wepons" value="huey" />
+        <label for="minikomet">minikomet</label>
+    </div>
+    <div>
+        <input type="radio" id="armagedon" name="wepons" value="huey" checked />
+        <label for="armagedon">super wepons</label>
+    </div>
+    <input id="wepons" type="button"></p>
+    <p><button id="knopka1" type="button">выход</button>
+    <a href="UFO2.html" id="star1" style="display: none;">🛸✨</a>
+    <div id="star2" style="display: none;">🔭✨✨✨✨✨🌠🌠🌠🌠🌠</div></p>
+    <p><button id="knopka2" type="button">размножение</button></p>
+    <div id="top1" style="position: absolute;left: 2em;">⬆️</div><br>
+    <div id="left1" style="display: inline;">⬅️</div>
+    <div style="display: inline;">⬛</div>
+    <div id="left2" style="display: inline;">➡️</div><br>
+    <div id="top2" style="position: absolute;left: 2em;">⬇️</div>
+
+    <script>
+        const knopka1 = document.getElementById('knopka1')
+        const star1 = document.getElementById('star1')
+        const star2 = document.getElementById('star2')
+        const knopka2 = document.getElementById('knopka2')
+        const laser = document.getElementById('laser')
+        const wepons = document.getElementById('wepons')
+        const gun = document.getElementById('gun')
+        const GBU = document.getElementById('GBU')
+        const fire = document.getElementById('fire')
+        const mishon = document.getElementById('mishon')
+        const ghostbomb = document.getElementById('ghostbomb')
+        const minikomet = document.getElementById('minikomet')
+        const bomb = document.getElementById('armagedon')
+        const speed = document.getElementById('speed')
+        const speed2 = document.getElementById('speed2')
+        const knopka3 = document.getElementById('knopka3')
+        const r = document.getElementById('r')
+        const top1 = document.getElementById('top1')
+        const top2 = document.getElementById('top2')
+        const left1 = document.getElementById('left1')
+        const left2 = document.getElementById('left2')
+        const select = document.getElementById('select')
+        const knopka4 = document.getElementById('knopka5')
+        let speed1 = 0
+        let console1 = true
+        let SuperWepons = true
+        let top3 = 0
+        let left3 = 0
+        let gbu = 3
+
+        select.onchange = function() {
+            window.location.href = select.value;
+        };
+        knopka1.onclick = function() {
+            star1.style.removeProperty("display")
+            star2.style.removeProperty("display")
+        }
+        knopka2.onclick = function() {
+            console.log("🛸")
+        }
+        function superwepons() {
+            console.log("☢️💣")
+            SuperWepons = false
+        }
+        function Gbu() {
+            console.log("📻🚀")
+            gbu = gbu - 1
+        }
+        wepons.onclick = function() {
+            if(console1 === true) {
+                alert('нужно открыть console')
+                console1 = false
+            }            
+            if(bomb.checked && SuperWepons === true) {
+                console.log("подготовка...")
+                setTimeout(superwepons, 1000)
+            }
+            if(bomb.checked && SuperWepons === false) {
+                alert('super wepons не осталось в боекомплекте НЛО')
+            }
+            if(laser.checked) {
+                console.log("🔫👽")
+            }
+            if(gun.checked) {
+                console.log("🔫♾️")
+            }
+            if(GBU.checked && gbu !== 0) {
+                console.log("подготовка...")
+                setTimeout(Gbu, 1000)
+            }
+            if(GBU.checked && gbu === 0) {
+                alert('radio control rocket не осталось в боекомплекте НЛО')
+            }
+            if(fire.checked) {
+                console.log("🔥")
+            }
+            if(mishon.checked) {
+                console.log("🚀")
+            }
+            if(ghostbomb.checked) {
+                console.log("👻💣")
+            }
+            if(minikomet.checked) {
+                console.log("☄️")
+            }
+        }
+        speed.onclick = function() {
+            if(speed1 !== 0) {
+                speed1 = speed1 - 1
+                console.log("скорость:")
+                console.log(speed1)
+            }
+            if(speed1 ===0) {
+                alert('сейчас минимальная скорость')
+            }
+        }
+        speed2.onclick = function() {
+                speed1 = speed1 + 1
+                console.log("скорость:")
+                console.log(speed1)
+        }
+        knopka3.onclick = function() {
+            r.textContent = speed1.toString()
+        }
+        top1.onclick = function() {
+            top3 = top3 + 1
+            console.log("высота:")
+            console.log(top3)
+            console.log("градусы угла:")
+            console.log(left3)
+        }
+        top2.onclick = function() {
+            top3 = top3 - 1
+            console.log("высота:")
+            console.log(top3)
+            console.log("градусы угла:")
+            console.log(left3)
+        }
+        left1.onclick = function() {
+            left3 = left3 - 1
+            console.log("высота:")
+            console.log(top3)
+            console.log("градусы угла:")
+            console.log(left3)
+        }
+        left2.onclick = function() {
+            left3 = left3 + 1
+            console.log("высота:")
+            console.log(top3)
+            console.log("градусы угла:")
+            console.log(left3)
+        }
+    </script>
+</body></html>
