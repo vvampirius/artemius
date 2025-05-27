@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form id="PasswordDisplayNone">
+            enter password
+            <input id="password1" type="password">
+            <input id="password2" type="button">
+        </form>
+        <div id="div" style="display: none;">
+            <form>
+                function:
+                <input id="function1" type="search">
+                <input id="function2" type="button">
+                <input id="file" type="file" style="display: none;">
+            </form>
+        </div>
+        <script>
+            const PasswordDisplayNone = document.getElementById('PasswordDisplayNone')
+            const password1 = document.getElementById('password1')
+            const password2 = document.getElementById('password2')
+            const div = document.getElementById('div')
+            const function1 = document.getElementById('function1')
+            const function2 = document.getElementById('function2')
+            const file = document.getElementById('file')
+            let electric = false
+
+            password2.onclick = function() {
+                if(password1.value == "0024") {
+                    div.style.removeProperty("display")
+                    PasswordDisplayNone.style.display="none"
+                } else alert('не верный пароль')
+            }
+            function2.onclick = function() {
+                if(function1.value == "file" || function1.value == "exit" || function1.value == "t-rex.ik.electric" || function1.value == "electric.on" || function1.value == "electric.off") {
+                    if(function1.value == "file") {
+                        file.style.removeProperty("display")
+                    }
+                    if(function1.value == "exit") {
+                        div.style.display="none"
+                        PasswordDisplayNone.style.removeProperty("display")
+                    }
+                    if(function1.value == "t-rex.ik.electric") {
+                        if(electric === true) {
+                            console.log("on")
+                        } else console.log("off")
+                    }
+                    if(function1.value == "electric.on") {
+                        electric = true
+                    }
+                    if(function1.value == "electric.off") {
+                        electric = false
+                    }
+                } else alert('error')
+            }           
+        </script>
+    </body>
+</html>

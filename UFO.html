@@ -48,6 +48,12 @@
     <a href="UFO2.html" id="star1" style="display: none;">🛸✨</a>
     <div id="star2" style="display: none;">🔭✨✨✨✨✨🌠🌠🌠🌠🌠</div></p>
     <p><button id="knopka2" type="button">размножение</button></p>
+    <form>
+        рация:
+        + 375
+        <input id="phone" type="tel">
+        <input id="phone2" type="button">
+    </form>
     <div id="top1" style="position: absolute;left: 2em;">⬆️</div><br>
     <div id="left1" style="display: inline;">⬅️</div>
     <div style="display: inline;">⬛</div>
@@ -78,13 +84,20 @@
         const left2 = document.getElementById('left2')
         const select = document.getElementById('select')
         const knopka4 = document.getElementById('knopka5')
+        const phone1 = document.getElementById('phone')
+        const phone3 = document.getElementById('phone2')
         let speed1 = 0
         let console1 = true
         let SuperWepons = true
         let top3 = 0
         let left3 = 0
         let gbu = 3
+        let phone2 = 0
 
+        phone3.onclick = function() {
+            phone2 = phone1.value
+            console.log(phone2)
+        }
         select.onchange = function() {
             window.location.href = select.value;
         };
