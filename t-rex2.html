@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>terminal</title>
+    </head>
     <body>
-        <form id="PasswordDisplayNone">
-            enter password
-            <input id="password1" type="password">
-            <input id="password2" type="button">
-        </form>
-        <div id="div" style="display: none;">
+        <header>
+            <form id="PasswordDisplayNone">
+                <abbr title="Пароль: 0024">enter password</abbr>
+                <input id="password1" type="password">
+                <input id="password2" type="button">
+            </form>
+        </header>
+        <hr>
+        <nav>
+            <a href="t-rex2.html">терминал</a>
+            <a href="t-rex3.html">дракон</a>
+            <a href="https://wampi.re"><i><b>Борт-журнал некоего вампира🦇</b></i></a>
+        </nav>
+        <hr>
+        <section id="div" style="display: none;">
             <form>
                 function:
                 <input id="function1" type="search">
@@ -15,8 +27,23 @@
                 <input id="let1" type="number" style="display: none;">
                 <div id="color" style="display: none;">color</div>
                 <input id="color2" type="color" style="display: none;">
-            </form>
-        </div>
+            </form><br>
+            <p id="formul" style="display: none;">E=mc<sup>2</sup></p>
+        </section>
+        <hr>
+        <aside>
+            <h3>функции:</h3>
+            file<br>
+            formul<br>
+            t-rex.ik.electric<br>
+            electric.on<br>
+            electric.off<br>
+            code<br>
+            let.int<br>
+            color.t-rex.ik.code<br>
+            color.element     
+        </aside>
+        <u id="error" style="display: none;color: red;">error</u>
         <script>
             const PasswordDisplayNone = document.getElementById('PasswordDisplayNone')
             const password1 = document.getElementById('password1')
@@ -28,26 +55,40 @@
             const let1 = document.getElementById('let1')
             const color = document.getElementById('color')
             const color2 = document.getElementById('color2')
+            const error = document.getElementById('error')
+            const formul = document.getElementById('formul')
             let electric = false
             let code = false
             let let2 = 0
             let let3 = 0
             let let4 = 0
+            let int = false
+            let EnterPassword = true
 
+            function NoError() {
+                error.style.display="none"
+            }
             password2.onclick = function() {
+                if(password1.value !== "0024" && EnterPassword === false) {
+                    PasswordDisplayNone.style.display="none"
+                }
                 if(password1.value == "0024") {
                     div.style.removeProperty("display")
                     PasswordDisplayNone.style.display="none"
-                } else alert('не верный пароль')
+                } else{ 
+                    alert('не верный пароль')
+                    error.style.removeProperty("display")
+                    setTimeout(NoError, 5000)
+                    EnterPassword = false
+                }
             }
             function2.onclick = function() {
-                if(function1.value == "file" || function1.value == "exit" || function1.value == "t-rex.ik.electric" || function1.value == "electric.on" || function1.value == "electric.off" || function1.value == "code" || function1.value == "let.int" || function1.value == "color.t-rex.ik.code" || function1.value == "color.element") {
+                if(function1.value == "file" || function1.value == "formul" || function1.value == "t-rex.ik.electric" || function1.value == "electric.on" || function1.value == "electric.off" || function1.value == "code" || function1.value == "let.int" || function1.value == "color.t-rex.ik.code" || function1.value == "color.element") {
                     if(function1.value == "file") {
                         file.style.removeProperty("display")
                     }
-                    if(function1.value == "exit") {
-                        div.style.display="none"
-                        PasswordDisplayNone.style.removeProperty("display")
+                    if(function1.value == "formul") {
+                        formul.style.removeProperty("display")
                     }
                     if(function1.value == "t-rex.ik.electric") {
                         if(electric === true) {
@@ -65,8 +106,9 @@
                     }
                     if(function1.value == "let.int" && code === true) {
                         let1.style.removeProperty("display")
+                        int = true
                     }
-                    if(code === true) {
+                    if(int === true) {
                         console.log("let")
                         console.log("=")
                         let2 = let1.value
@@ -75,10 +117,10 @@
                         console.log(let2)
                     }
                     if(function1.value == "color.t-rex.ik.code") {
+                        //`элемент меняюий цвет`.style.color = "rgb(" + `цвет (красный)` + ", " + `цвет (зелёный)` + ", " + `цвет (синий)` + ")";`точку с запятой можно убрать`
                         console.log("int+1 int-1 int=int")
                         let2 = let2 + 1
                         let3 = let3 - 1
-                        color.style.color="let2, let3, let4"
                         console.log("red")
                         console.log(let2)
                         console.log("green")
@@ -90,7 +132,7 @@
                         color2.style.removeProperty("display")
                     }
                 } else alert('error')
-            }           
+            }            
         </script>
     </body>
 </html>
