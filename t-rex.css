@@ -1,0 +1,13 @@
+t-rex {
+    color: green;
+    display: inline;
+}
+a:hover {
+    color: purple;
+}
+t-wampire {
+    color: brown;
+}
+t-wampire:active {
+    color: black;
+}
