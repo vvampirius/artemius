@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dragon</title>
+    </head>
+    <body>
+        <header>
+            <form id="PasswordDisplayNone">
+                <abbr title="Пароль: 0024">enter password</abbr>
+                <input id="password1" type="password">
+                <input id="password2" type="button">
+            </form>
+        </header>
+        <hr>
+        <nav>
+            <a href="t-rex2.html">терминал</a>
+            <a href="t-rex3.html">дракон</a>
+        </nav>
+        <hr>
+        <section id="div" style="display: none;">
+            <fieldset>
+                <legend><img style="width: 50%;" id="dragon" src="dragon1.png"></legend>
+                <textarea cols="30" rows="3" placeholder="драконьи комментарии..."></textarea><br>
+            </fieldset>
+            <t-rex style="color: green;">
+                <h1 style="color: red;">!</h1>не верная информация:
+                тираннозавр тоже дракон
+            </t-rex>
+        </section>
+        <script>
+            const PasswordDisplayNone = document.getElementById('PasswordDisplayNone')
+            const password1 = document.getElementById('password1')
+            const password2 = document.getElementById('password2')
+            const section = document.getElementById('div')
+            const dragon = document.getElementById('dragon')
+
+            password2.onclick = function() {
+                if(password1.value == "0024") {
+                    PasswordDisplayNone.style.display="none"
+                    section.style.removeProperty("display")
+                } else alert('error')
+            }
+        </script>
+    </body>
+</html>
