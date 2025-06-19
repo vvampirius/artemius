@@ -2,3 +2,16 @@ t-rex {
     color: green;
     display: inline;
 };
+p {
+    color: yellow;
+    display: inline;
+}
+wampi.re {
+    color: brown;
+    position: fixed;
+    top: 0;
+    left: 1000;
+}
+a {
+    color: blueviolet;
+}
