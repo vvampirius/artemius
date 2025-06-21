@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <title id="title">тест</title>
         <link rel="stylesheet" href="t-rex.css">
+        <meta charset="UTF-8">
+        <meta name="keywords" content="тест в HTML, тег t-rex, ссылка на wampi.re">
+        <!--<meta http-equiv="refresh" content="20;https://wampi.re">-->
     </head>
     <body>
-        <p><h1><t-rex>тираннозавр рекс</t-rex>
-        t-rex style: color: red; display:  inline;</h1></p>
+        <p><h1><t-rex>тираннозавр рекс</t-rex><br>
+        t-rex сделать зелёным и встроенным в строку</h1></p>
         <wampi class="re">wampi.re<a href="https://wampi.re">wampi.re</a>wampi.re</wampi>
         <input type="password">
         <textarea cols="19" rows="1">1_2_3_4_5_6_7_8_9_10</textarea>
@@ -17,11 +21,50 @@
         <input id="C" type="checkbox" name="checkbox">
         <div for="D">D</div>
         <input id="D" type="checkbox" name="checkbox"></p>
+        <form id="form">
+            <input type="submit" id="input">
+            <input type="reset">
+            <input type="button">
+            <input type="image">
+            <input type="hidden">
+            <input type="text">
+            <input type="search">
+            <input type="tel">
+            <input type="url">
+            <input type="email">
+            <input type="password">
+            <input type="number">
+            <input type="range">
+            <input type="checkbox">
+            <input type="radio">
+            <input type="file">
+            <input type="color">
+            <input type="datetime-local">
+            <input type="month">
+            <input type="week">
+            <input type="date">
+            <input type="time">
+        </form>
         <script>
             const a = document.getElementById('A')
             const b = document.getElementById('B')
             const c = document.getElementById('C')
             const d = document.getElementById('D')
+            const title1 = document.getElementById('form')
+            const title2 = document.getElementById('title')
+            const title3 = document.getElementById('input')
+
+            a.onclick = function() {
+            }
+            b.onclick = function() {
+            }
+            c.onclick = function() {
+            }
+            d.onclick = function() {
+            }
+            //if(a.checked && b.checked && c.checked && d.checked) {
+            //        alert('победа')
+            //    }
         </script>
     </body>
 </html>
