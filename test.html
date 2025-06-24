@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="t-rex.css">
         <meta charset="UTF-8">
         <meta name="keywords" content="тест в HTML, тег t-rex, ссылка на wampi.re">
+        <script src="start.js"></script>
         <!--<meta http-equiv="refresh" content="20;https://wampi.re">-->
     </head>
     <body>
@@ -21,50 +22,48 @@
         <input id="C" type="checkbox" name="checkbox">
         <div for="D">D</div>
         <input id="D" type="checkbox" name="checkbox"></p>
-        <form id="form">
-            <input type="submit" id="input">
+        <form>
+            <input type="submit">
             <input type="reset">
-            <input type="button">
+            <input type="button" id="input">
             <input type="image">
-            <input type="hidden">
-            <input type="text">
-            <input type="search">
-            <input type="tel">
-            <input type="url">
-            <input type="email">
+            <input type="hidden" value="t-rex" class="form">
+            <input type="text" class="form">
+            <input type="search" class="form">
+            <input type="tel" class="form">
+            <input type="url" class="form">
+            <input type="email" class="form">
             <input type="password">
-            <input type="number">
+            <input type="number" class="form">
             <input type="range">
             <input type="checkbox">
             <input type="radio">
             <input type="file">
             <input type="color">
             <input type="datetime-local">
-            <input type="month">
+            <input type="month" class="form">
             <input type="week">
-            <input type="date">
+            <input type="date" class="form">
             <input type="time">
         </form>
-        <script>
-            const a = document.getElementById('A')
-            const b = document.getElementById('B')
-            const c = document.getElementById('C')
-            const d = document.getElementById('D')
-            const title1 = document.getElementById('form')
-            const title2 = document.getElementById('title')
-            const title3 = document.getElementById('input')
-
-            a.onclick = function() {
-            }
-            b.onclick = function() {
-            }
-            c.onclick = function() {
-            }
-            d.onclick = function() {
-            }
-            //if(a.checked && b.checked && c.checked && d.checked) {
-            //        alert('победа')
-            //    }
+        <form>
+            <input type="button" id="submit">
+            <input type="hidden" id="form2,1" value="текст:">
+            <input type="text" id="form2,2">
+            <input type="hidden" id="form2,3" value="поиск:">
+            <input type="search" id="form2,4">
+            <input type="hidden" id="form2,5" value="телефон:">
+            <input type="tel" id="form2,6" value="+375">
+            <input type="hidden" id="form2,7" value="URL:">
+            <input type="url" id="form2,8" value="https://">
+            <input type="hidden" id="form2,9" value="электронная почта:">
+            <input type="email" id="form2,10">
+        </form>
+        <script src="test.js">
         </script>
+        <script>
+            start();
+        </script>
+        &lt;тег&gt;
     </body>
 </html>
