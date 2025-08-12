@@ -1,0 +1,30 @@
+#I {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+#bathroom {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+#kitchen {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+}
+#living_room {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+#bedroom {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+#exit {
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}

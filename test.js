@@ -1,5 +1,3 @@
-const title2 = document.getElementsByClassName('form')
-const title3 = document.getElementById('input')
 const submit = document.getElementById('submit')
 const form1 = document.getElementById('form2,1')
 const form2 = document.getElementById('form2,2')
@@ -12,9 +10,6 @@ const form8 = document.getElementById('form2,8')
 const form9 = document.getElementById('form2,9')
 const form10 = document.getElementById('form2,10')
 //пустая строка между переменными и действиями
-title3.onclick = function() {
-    alert(`${title2.value}`)
-}
 submit.onclick = function() {
     alert(`${form1.value} ${form2.value}`)
     alert(`${form3.value} ${form4.value}`)
