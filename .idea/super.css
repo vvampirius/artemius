@@ -1,0 +1,15 @@
+div.test100 {
+    color: green;
+}
+p#css {
+    color: green;
+}
+p.css {
+    color: green;
+}
+a.test100:hover {
+    color: green;
+}
+button.test100:active {
+    color: green;
+}
