@@ -1,7 +1,9 @@
 let date = new Date()
+let dateYear = date.getFullYear()//год
 let dateMonth = date.getMonth()//месяц
 let dateDate = date.getDate()//число
 let dateDay = date.getDay()//день недели
+const info = document.getElementById("info")
 const I = document.getElementById("I")
 const bathroom = document.getElementById("bathroom")
 const kitchen = document.getElementById("kitchen")

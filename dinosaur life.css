@@ -28,3 +28,13 @@
     top: 100px;
     left: 600px;
 }
+#form {
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+#info {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}

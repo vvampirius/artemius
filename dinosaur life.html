@@ -6,16 +6,21 @@
        <link rel="stylesheet" href="dinosaur%20life.css">
     </head>
     <body>
-        <form action="UFO.html" method="get">
+        <form id="form" action="meta.html" method="get"><!-- перезагрузка-->
             <label for="select"></label>
-            <select id="select">
-                <option value="original">T-REX.ik</option>
-                <option value="code">0024</option>
+            <select name="type" id="select">
+                <option value="T-TREX.ik">T-REX.ik</option>
+                <option value="0024">0024</option>
             </select>
+            <input name="name" type="text" placeholder="text">
+            <input name="password" type="password" placeholder="password">
+            <textarea name="text" cols="10" rows="1"></textarea>
+            <input name="years" type="number" placeholder="years">
             <input type="submit">
         </form>
-        <strong id="I">🦖</strong>
-        <div id="background"><!-- фон -->
+        <strong id="info"></strong>
+        <strong id="I">🦖</strong><!-- дино -->
+        <div><!-- фон -->
             <abbr title="bathroom" id="bathroom">🚪</abbr><abbr title="kitchen" id="kitchen">🚪</abbr><abbr title="living room" id="living_room">🚪</abbr><abbr title="bedroom" id="bedroom">🚪</abbr><abbr title="exit" id="exit">🚪</abbr>
         </div>
         <script src="dinosaur%20life.js"></script>
