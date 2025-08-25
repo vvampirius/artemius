@@ -38,3 +38,23 @@
     top: 50px;
     left: 100px;
 }
+#a {
+    position: absolute;
+    left: 100px;
+    display: none;
+}
+#b {
+    position: absolute;
+    left: 200px;
+    display: none;
+}
+#c {
+    position: absolute;
+    left: 300px;
+    display: none;
+}
+#d {
+    position: absolute;
+    left: 400px;
+    display: none;
+}

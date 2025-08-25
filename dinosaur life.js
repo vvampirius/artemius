@@ -10,9 +10,21 @@ const kitchen = document.getElementById("kitchen")
 const living_room = document.getElementById("living_room")
 const bedroom = document.getElementById("bedroom")
 const exit = document.getElementById("exit")
+const URL = new URLSearchParams(window.location.search);
+const typeURL = URL.get('type');
+const yearsURL = URL.get('years');
 
+function loop() {
+    while (typeURL) {
+        console.log(yearsURL)
+    }
+}
 I.onclick = function () {
-    I.style.display = "none"
+    if (!typeURL) {
+        alert('не отправлена форма')
+    } else {
+        I.style.display = "none"
+    }
 }
 bathroom.onclick = function () {
 }
@@ -24,3 +36,4 @@ bedroom.onclick = function () {
 }
 exit.onclick = function () {
 }
+loop()
