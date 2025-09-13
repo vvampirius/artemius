@@ -1,6 +1,9 @@
 const express = require("express");
-const {signedCookie, signedCookies} = require("cookie-parser");
 const app = express();
+const {signedCookie, signedCookies} = require("cookie-parser")
+const cookieParser = require("cookie-parser");
+//import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -20,20 +23,29 @@ app.post('/user', (req, res) => {
 app.post('/next', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    const testPassword = req.body.testPassword;
+    console.log(req.cookies.artemius)
 
     if (username) {
-        res.cookie(username, password, {
+        res.cookie('artemius', password, {
+            path: '/next',
             maxAge: 1000 * 60 * 60 * 24 * 445
         })
+        res.send(`<h1>Welcome</h1>`)
     } else {
-        res.cookie(username, password, {
+        const testPassword = req.body.testPassword;
+        const reqCookies = req.signedCookies;
+        res.cookie('artemius', password, {
+            path: '/next',
             maxAge: 1000 * 60 * 60 * 24 * 445
         })
-        const cookieParser = require("cookie-parser");
-        app.use(cookieParser());
-        console.log(req.cookies);
+        if (req.cookies === testPassword) {
+            res.send(`<h1>Welcome</h1>`)
+        } else {
+            res.send(`<del>${testPassword}</del>`)
+        }
+
+        console.log(res.cookie.artemius);
+        console.log(testPassword);
     }
-    res.send(`${req.cookies.password}`)
 })
 app.listen(2025);
