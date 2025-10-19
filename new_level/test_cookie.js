@@ -82,10 +82,16 @@ app.post('/next', (req, res) => {
         const testPassword = req.body.testPassword;
 
         let UKJSON = NaN
-        const UserCookies = req.cookies;
+        const UserCookies = req.cookies.User;
+        console.log(`User из куки: ${UserCookies}`)
+
         const UsersKeyJSON = fs.readFileSync('Users.json', 'utf-8');
         UKJSON = JSON.parse(UsersKeyJSON);
-        if (UKJSON === testPassword) {
+
+        const passInJson = UKJSON.Users[UserCookies]
+
+        console.log(`Пароль из UKJSON is ${passInJson}`);
+        if (passInJson === testPassword) {
             res.send(`<h1>Welcome!</h1><div><form action="http://localhost:2025/books" method="post"><button type="submit">books</button></form><form action="http://localhost:2025/games" method="post"><button type="submit">games</button></form></div>`)
         } else {
             if(testPassword) {
@@ -111,5 +117,8 @@ app.post('/books/write', (req, res) => {
 })
 app.post('/books/read', (req, res) => {
     res.send(`read<form></form>`)
+})
+app.post('/games', (req, res) => {
+    res.send(`<h1>games</h1><!-- <nav><form method="post" action="http://localhost:2025/games/all"><button type="submit">all</button></form><br><form method="post" action="http://localhost:2025/games/favorite"><button type="submit">favorite</button></form></nav> -->`)
 })
 app.listen(2025);
