@@ -90,9 +90,35 @@ app.post('/next', (req, res) => {
 
         const passInJson = UKJSON.Users[UserCookies]
 
-        console.log(`Пароль из UKJSON is ${passInJson}`);
+        console.log(`password from UKJSON is ${passInJson}`);
+
         if (passInJson === testPassword) {
-            res.send(`<h1>Welcome!</h1><div><form action="http://localhost:2025/books" method="post"><button type="submit">books</button></form><form action="http://localhost:2025/games" method="post"><button type="submit">games</button></form></div>`)
+            let K = NaN;
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            const randomValue = getRandomInt(1, 999999);
+            res.cookie('Key', randomValue, {
+                path: '/',
+                maxAge: 1000 * 60
+            })
+            try {
+                const data = fs.readFileSync('keys.json', 'utf-8');
+                console.log(`all keys: ${data}`);
+                console.log(`parse:`, JSON.parse(data));
+                K = JSON.parse(data)
+            } catch (err) {
+                console.error(err);
+            }
+            K.Keys[`${username}`] = randomValue
+            fs.writeFile('Keys.json', JSON.stringify(K, null, 2), {}, (err) => {
+                if (err) {
+                    console.error(err)
+                }
+            });
+            res.send(`<h1>Welcome!</h1><div><form action="http://localhost:2025/games" method="post"><button type="submit">games</button></form></div>`)
         } else {
             if(testPassword) {
                 res.send(`<del>${testPassword}</del>`)
@@ -107,18 +133,13 @@ app.post('/next', (req, res) => {
         console.log(N + testPassword);
     }
 })
-app.post('/books', (req, res) => {
-    const password = req.cookies.User;
-    res.cookie('books')
-    res.send(`<form action="http://localhost:2025/books/write" method="post"><button type="submit">write</button></form><br><form action="http://localhost:2025/books/read" method="post"><button type="submit">read</button></form>`)
-})
-app.post('/books/write', (req, res) => {
-    res.send(`write<form></form>`)
-})
-app.post('/books/read', (req, res) => {
-    res.send(`read<form></form>`)
-})
 app.post('/games', (req, res) => {
+    //let UKJSON = NaN
+    //const Cookies = req.cookies;
+    //console.log(`Key: ${Cookies.Key}`)
+    //const UsersKeyJSON = fs.readFileSync('Keys.json', 'utf-8');
+    //UKJSON = JSON.parse(UsersKeyJSON);
+    //const passInJson = UKJSON.Users[UserCookies]
     res.send(`<h1>games</h1><!-- <nav><form method="post" action="http://localhost:2025/games/all"><button type="submit">all</button></form><br><form method="post" action="http://localhost:2025/games/favorite"><button type="submit">favorite</button></form></nav> -->`)
 })
 app.listen(2025);
